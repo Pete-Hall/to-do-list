@@ -4,6 +4,7 @@ function onReady() {
   // event handlers
   $('#addTaskButton').on('click', addTask);
   getTasks();
+  $('#tasksOut').on('click','.deleteButton', deleteTask);
 }
 
 function addTask() {
@@ -30,6 +31,20 @@ function addTask() {
   })
 }
 
+function deleteTask() {
+  console.log('in deleteTask:', $(this).data('id'));
+  $.ajax({
+    method: 'DELETE',
+    url: `/tasks?id=${$(this).data('id')}`
+  }).then(function(response){
+    console.log('back from /tasks DELETE:', response);
+    getTasks();
+  }).catch(function(err){
+    console.log(err);
+    alert('error deleting task');
+  })
+}
+
 function getTasks() {
   console.log('in getTasks');
   $.ajax({
@@ -40,7 +55,7 @@ function getTasks() {
     let el = $('#tasksOut');
     el.empty();
     for(let i=0; i<response.length; i++) {
-      el.append(`<li>${response[i].description}</li>`);
+      el.append(`<li>${response[i].description}<button class="deleteButton" data-id="${response[i].id}">Delete</button></li>`);
     }
   }).catch(function(err){
     console.log(err);
