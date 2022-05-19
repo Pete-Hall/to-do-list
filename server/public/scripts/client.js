@@ -20,8 +20,8 @@ function addTask() {
     data: newTask
   }).then(function(response) {
     console.log('back from POST:', response);
-    // TODO: display tasks on the DOM
-
+    // display tasks on the DOM
+    getTasks();
     // clear user inputs
     $('#tasksIn').val('');
   }).catch(function(err) {
@@ -32,4 +32,18 @@ function addTask() {
 
 function getTasks() {
   console.log('in getTasks');
+  $.ajax({
+    method: 'GET',
+    url: '/tasks'
+  }).then(function(response){
+    console.log('back from GET:', response);
+    let el = $('#tasksOut');
+    el.empty();
+    for(let i=0; i<response.length; i++) {
+      el.append(`<li>${response[i].description}</li>`);
+    }
+  }).catch(function(err){
+    console.log(err);
+    alert('error getting tasks');
+  })
 }
