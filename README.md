@@ -12,3 +12,4 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 ## Tasks
 - [x] create folder/file structure
 - [x] npm init --y, npm install express, npm install pg
+- [ ] CREATE - add the ability to add a task to the database
