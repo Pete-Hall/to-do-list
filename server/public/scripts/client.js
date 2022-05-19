@@ -3,6 +3,7 @@ $(document).ready(onReady);
 function onReady() {
   // event handlers
   $('#addTaskButton').on('click', addTask);
+  getTasks();
 }
 
 function addTask() {
@@ -27,4 +28,8 @@ function addTask() {
     console.log(err);
     alert('error adding task');
   })
+}
+
+function getTasks() {
+  console.log('in getTasks');
 }
