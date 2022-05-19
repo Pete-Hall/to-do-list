@@ -13,4 +13,6 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [x] create folder/file structure
 - [x] npm init --y, npm install express, npm install pg
 - [x] CREATE - add the ability to add a task to the database
-- [ ] READ - add the ability to display tasks from the database onto the DOM
+- [x] READ - add the ability to display tasks from the database onto the DOM
+- [x] DELETE - add the ability to delete a task from the database and have the DOM update
+- [ ] UPDATE - add the ability to update a task from incomplete to complete (false to true)
