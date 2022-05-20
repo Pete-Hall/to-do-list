@@ -7,4 +7,5 @@ CREATE TABLE tasks(
 -- CRUD tests
 INSERT INTO tasks (description) VALUES ('Clean the kitchen');
 SELECT * FROM tasks;
+UPDATE tasks SET completed=true WHERE id=2;
 DELETE FROM tasks WHERE id=1;

@@ -5,6 +5,8 @@ function onReady() {
   $('#addTaskButton').on('click', addTask);
   getTasks();
   $('#tasksOut').on('click','.deleteButton', deleteTask);
+  $('#tasksOut').on('click', '.completeButton', completeTask);
+
 }
 
 function addTask() {
@@ -28,6 +30,21 @@ function addTask() {
   }).catch(function(err) {
     console.log(err);
     alert('error adding task');
+  })
+}
+
+function completeTask() {
+  console.log('in completeTask:', $(this).data('id'));
+  $.ajax({
+    method: 'PUT',
+    url: `/tasks?id=${$(this).data('id')}`
+  }).then(function(response){
+    console.log('back from /tasks PUT:', response);
+    // update CSS
+
+  }).catch(function(err){
+    console.log(err);
+    alert('error completing task');
   })
 }
 
@@ -55,7 +72,7 @@ function getTasks() {
     let el = $('#tasksOut');
     el.empty();
     for(let i=0; i<response.length; i++) {
-      el.append(`<li>${response[i].description}<button class="deleteButton" data-id="${response[i].id}">Delete</button></li>`);
+      el.append(`<li>${response[i].description}<button class="deleteButton" data-id="${response[i].id}">Delete</button><button class="completeButton" data-id="${response[i].id}">Complete</button></li>`);
     }
   }).catch(function(err){
     console.log(err);
