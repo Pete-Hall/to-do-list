@@ -40,8 +40,7 @@ function completeTask() {
     url: `/tasks?id=${$(this).data('id')}`
   }).then(function(response){
     console.log('back from /tasks PUT:', response);
-    // update CSS
-
+    getTasks();
   }).catch(function(err){
     console.log(err);
     alert('error completing task');
@@ -72,7 +71,14 @@ function getTasks() {
     let el = $('#tasksOut');
     el.empty();
     for(let i=0; i<response.length; i++) {
-      el.append(`<li>${response[i].description}<button class="deleteButton" data-id="${response[i].id}">Delete</button><button class="completeButton" data-id="${response[i].id}">Complete</button></li>`);
+      // update front end if task is completed
+      let beforeTag = '';
+      let afterTag = '';
+      if(response[i].completed === true) {
+        beforeTag = '<s>';
+        afterTag = '</s>';
+      }
+      el.append(`<li>${beforeTag}${response[i].description}<button class="deleteButton" data-id="${response[i].id}">Delete</button><button class="completeButton" data-id="${response[i].id}">Complete</button>${afterTag}</li>`);
     }
   }).catch(function(err){
     console.log(err);
