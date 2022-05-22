@@ -56,7 +56,7 @@ function deleteTask() {
     dangerMode: true,
   }).then((willDelete)=>{
     if(willDelete) {
-      swal('Your task has been deleted.');
+      swal('See ya!','Your task has been deleted.', 'success');
       $.ajax({
         method: 'DELETE',
         url: `/tasks?id=${$(this).data('id')}`
