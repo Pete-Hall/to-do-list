@@ -22,6 +22,11 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [ ] update readme to describe what's happening
 
 - [ ] add toggle ability to the update button
+  - add add/remove class code block to completeTask function (from toggle testing)
+  - create incompleteTask function and appropriate click handler
+  - add add/remove class code block to incompleteTask function
+  - in incompleteTask ajax PUT call, use url /tasks/incomplete
+  - in tasks.js routes, create router.put for ('/tasks/incomplet', (req, res)...) and have query be SET completed=false
 
 
 ## Stretch Goals Tasks

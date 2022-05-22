@@ -44,6 +44,8 @@ function addTask() {
 
 function completeTask() {
   console.log('in completeTask:', $(this).data('id'));
+  // if this button has class=completeButton then run the rest of completeTask function
+  // removeClass(completeButton).addClass(incompleteButton)
   $.ajax({
     method: 'PUT',
     url: `/tasks?id=${$(this).data('id')}`
@@ -55,6 +57,9 @@ function completeTask() {
     alert('error completing task');
   })
 }
+
+// function incompleteButton() {
+// if this button has class=incompleteButton then run the rest of incomplete
 
 function deleteTask() {
   console.log('in deleteTask:', $(this).data('id'));
