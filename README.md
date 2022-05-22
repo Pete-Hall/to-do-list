@@ -27,5 +27,5 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 - [ ] feature-styling-bootstrap
   - [x] buttons
-  - [ ] inputs
-  - [ ] responsive
+  - [x] inputs
+  - [x] responsive
