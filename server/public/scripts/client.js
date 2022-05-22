@@ -4,7 +4,7 @@ function onReady() {
   // event handlers
   $('#addTaskButton').on('click', addTask);
   getTasks();
-  $('#tasksOut').on('click','.btn-danger', deleteTask);
+  $('#tasksOut').on('click','.deleteButton', deleteTask);
   $('#tasksOut').on('click', '.completeButton', completeTask);
 
 }
@@ -78,7 +78,7 @@ function getTasks() {
         beforeTag = '<s>';
         afterTag = '</s>';
       }
-      el.append(`<li>${beforeTag}${response[i].description}<button class="btn-danger" data-id="${response[i].id}">Delete</button><button class="completeButton" data-id="${response[i].id}">Complete</button>${afterTag}</li>`);
+      el.append(`<li>${beforeTag}${response[i].description}<button class="deleteButton btn btn-sm btn-danger" data-id="${response[i].id}">Delete</button><button class="completeButton btn btn-sm btn-warning" data-id="${response[i].id}">Complete</button>${afterTag}</li>`);
     }
   }).catch(function(err){
     console.log(err);

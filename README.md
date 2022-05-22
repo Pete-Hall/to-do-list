@@ -26,6 +26,6 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [ ] figure out a way to toggle whether or not a task is completed (vs completing it and that decision being final)
 
 - [ ] feature-styling-bootstrap
-  - [ ] buttons
+  - [x] buttons
   - [ ] inputs
   - [ ] responsive
