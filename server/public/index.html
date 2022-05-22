@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="vendors/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/style.css">
   
   <script src="vendors/jquery-3.6.0.min.js"></script>
   <script src="scripts/client.js"></script>
@@ -15,12 +16,19 @@
   <title>To-Do List</title>
 </head>
 <body>
-  <h1>To-Do List Weekend Challenge</h1>
-  <div id="inputDiv">
-    <input id="tasksIn" type="text" placeholder="Description of task">
-    <button id="addTaskButton" class="btn-success">Add Task</button>
+  <div class="container">
+    <h1>To-Do List Weekend Challenge</h1>
   </div>
-  <div id="outputDiv">
+  <div id="inputDiv" class="container input-group">
+    <input id="tasksIn" class="form-control" type="text" placeholder="Description of task">
+    <div class="input-group-append">
+      <button id="addTaskButton" class="btn btn-outline-success">Add Task</button>
+    </div>
+  </div>
+  <div class="container">
+    <small class="form-text text-muted">What do you have going on?</small>
+  </div>
+  <div id="outputDiv" class="container">
     <ul id="tasksOut">
     </ul>
   </div>
