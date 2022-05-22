@@ -16,7 +16,7 @@ router.delete('/', (req, res)=>{
 
 router.get('/', (req, res)=>{
   console.log('in /koalas GET');
-  let queryString = `SELECT * FROM tasks;`;
+  let queryString = `SELECT * FROM tasks ORDER BY id ASC;`; // added in ASC so the database wouldn't update the order when a value is updated (i.e. when a task is completed)
   pool.query(queryString).then((results)=>{
     res.send(results.rows);
   }).catch((err)=>{

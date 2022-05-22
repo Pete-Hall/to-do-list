@@ -25,7 +25,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 ## Stretch Goals Tasks
 - [ ] figure out a way to toggle whether or not a task is completed (vs completing it and that decision being final)
 
-- [ ] feature-styling-bootstrap
+- [x] feature-styling-bootstrap
   - [x] buttons
   - [x] inputs
   - [x] responsive
+  

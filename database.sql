@@ -9,3 +9,6 @@ INSERT INTO tasks (description) VALUES ('Clean the kitchen');
 SELECT * FROM tasks;
 UPDATE tasks SET completed=true WHERE id=2;
 DELETE FROM tasks WHERE id=1;
+
+-- using ORDER BY in READ
+SELECT * FROM tasks ORDER BY id ASC;
