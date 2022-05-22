@@ -29,5 +29,5 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
   - [x] buttons
   - [x] inputs
   - [x] responsive
-- [ ] feature-confirm-delete
- - [ ] are you sure? yes/no. when deleting a task using sweetalerts
+- [x] feature-confirm-delete
+ - [x] are you sure? yes/no. when deleting a task using sweet alerts

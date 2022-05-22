@@ -68,7 +68,7 @@ function deleteTask() {
         alert('error deleting task');
       });
     } else {
-      swal('You have NOT deleted this task.');
+      swal('Good catch.', 'You have NOT deleted this task.', 'info');
     }
   });
 }
