@@ -41,7 +41,8 @@ router.post('/', (req, res)=>{
 router.put('/', (req, res)=>{
   console.log('in /tasks PUT:', req.query);
   let queryString = `UPDATE tasks SET completed=true WHERE id=$1;`;
-  let values = [req.query.id];
+  let values = [req.query.id]; // to toggle, would need to be able to access req.query.completed, which would have to be sent in the client.js and parsed here? or the queryString would need to be an if statment...
+  // OR i could toggle/create/add a class and have that link to a different click handler/function?
   pool.query(queryString, values).then((results)=>{
     res.sendStatus(200);
   }).catch((err)=>{

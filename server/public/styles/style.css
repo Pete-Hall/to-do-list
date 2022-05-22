@@ -1,3 +1,7 @@
+body {
+  background-color: #FAFAFA;
+}
+
 .deleteButton {
   margin-left: 10px;
   margin-right: 10px;
@@ -13,4 +17,11 @@ li {
 
 .swal-overlay {
   background-color: rgba(235, 103, 255, 0.409);
+}
+.myToggle {
+  background-color: limegreen;
+}
+
+.toggleButton {
+  background-color: yellow;
 }

@@ -21,6 +21,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [ ] add comments for clarity
 - [ ] update readme to describe what's happening
 
+- [ ] add toggle ability to the update button
+
 
 ## Stretch Goals Tasks
 - [ ] figure out a way to toggle whether or not a task is completed (vs completing it and that decision being final)

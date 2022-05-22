@@ -6,6 +6,16 @@ function onReady() {
   getTasks();
   $('#tasksOut').on('click','.deleteButton', deleteTask);
   $('#tasksOut').on('click', '.completeButton', completeTask);
+  $('#testingToggleButton').on('click', testToggle);
+}
+
+function testToggle() {
+  console.log('in testToggle');
+  if($('#testingToggleButton').hasClass('toggleButton')) {
+    $('#testingToggleButton').removeClass('toggleButton').addClass('myToggle');
+  } else if($('#testingToggleButton').hasClass('myToggle')) {
+    $('#testingToggleButton').removeClass('myToggle').addClass('toggleButton');
+  }
 }
 
 function addTask() {
