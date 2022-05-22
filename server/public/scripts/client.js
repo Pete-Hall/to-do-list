@@ -6,7 +6,6 @@ function onReady() {
   getTasks();
   $('#tasksOut').on('click','.deleteButton', deleteTask);
   $('#tasksOut').on('click', '.completeButton', completeTask);
-
 }
 
 function addTask() {
@@ -49,16 +48,29 @@ function completeTask() {
 
 function deleteTask() {
   console.log('in deleteTask:', $(this).data('id'));
-  $.ajax({
-    method: 'DELETE',
-    url: `/tasks?id=${$(this).data('id')}`
-  }).then(function(response){
-    console.log('back from /tasks DELETE:', response);
-    getTasks();
-  }).catch(function(err){
-    console.log(err);
-    alert('error deleting task');
-  })
+  swal({
+    title: 'Are you sure?',
+    text: 'If you delete this task, you cannot restore it.',
+    icon: 'warning',
+    buttons: true,
+    dangerMode: true,
+  }).then((willDelete)=>{
+    if(willDelete) {
+      swal('Your task has been deleted.');
+      $.ajax({
+        method: 'DELETE',
+        url: `/tasks?id=${$(this).data('id')}`
+      }).then(function(response){
+        console.log('back from /tasks DELETE:', response);
+        getTasks();
+      }).catch(function(err){
+        console.log(err);
+        alert('error deleting task');
+      });
+    } else {
+      swal('You have NOT deleted this task.');
+    }
+  });
 }
 
 function getTasks() {
