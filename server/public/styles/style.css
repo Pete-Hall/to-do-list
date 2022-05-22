@@ -10,3 +10,7 @@ ul {
 li {
   margin-top: 10px;
 }
+
+.swal-overlay {
+  background-color: rgba(235, 103, 255, 0.409);
+}
