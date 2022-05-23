@@ -12,3 +12,6 @@ DELETE FROM tasks WHERE id=1;
 
 -- using ORDER BY in READ
 SELECT * FROM tasks ORDER BY id ASC;
+
+-- used for toggling the boolean completed to false
+UPDATE tasks SET completed=false WHERE id=$1;

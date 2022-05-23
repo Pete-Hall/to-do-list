@@ -40,16 +40,25 @@ router.post('/', (req, res)=>{
 
 router.put('/', (req, res)=>{
   console.log('in /tasks PUT:', req.query);
-  let queryString = `UPDATE tasks SET completed=true WHERE id=$1;`;
+  let queryStringTrue = `UPDATE tasks SET completed=true WHERE id=$1;`;
+  let queryStringFalse = `UPDATE tasks SET completed=false WHERE id=$1;`;
   let values = [req.query.id];
-  pool.query(queryString, values).then((results)=>{
-    res.sendStatus(200);
-  }).catch((err)=>{
-    console.log(err);
-    res.sendStatus(500);
-  })
+  if(req.query.boolean === 'false') {
+      pool.query(queryStringTrue, values).then((results)=>{
+      res.sendStatus(200);
+    }).catch((err)=>{
+      console.log(err);
+      res.sendStatus(500);
+    })
+  } 
+  else /*if(req.query.boolean === true)*/ {
+      pool.query(queryStringFalse, values).then((results)=>{
+      res.sendStatus(200);
+    }).catch((err)=>{
+      console.log(err);
+      res.sendStatus(500);
+    })
+  }
 })
-
-// create router.put('/incomplete, (req, res)=={ and have the queryString set complete=FALSE}) ??
 
 module.exports = router;

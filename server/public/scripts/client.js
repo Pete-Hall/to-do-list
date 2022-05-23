@@ -6,16 +6,6 @@ function onReady() {
   getTasks();
   $('#tasksOut').on('click','.deleteButton', deleteTask);
   $('#tasksOut').on('click', '.completeButton', completeTask);
-  $('#testingToggleButton').on('click', testToggle);
-}
-
-function testToggle() {
-  console.log('in testToggle');
-  if($('#testingToggleButton').hasClass('toggleButton')) {
-    $('#testingToggleButton').removeClass('toggleButton').addClass('myToggle');
-  } else if($('#testingToggleButton').hasClass('myToggle')) {
-    $('#testingToggleButton').removeClass('myToggle').addClass('toggleButton');
-  }
 }
 
 function addTask() {
@@ -44,11 +34,9 @@ function addTask() {
 
 function completeTask() {
   console.log('in completeTask:', $(this).data('id'));
-  // if this button has class=completeButton then run the rest of completeTask function
-  // removeClass(completeButton).addClass(incompleteButton)
   $.ajax({
     method: 'PUT',
-    url: `/tasks?id=${$(this).data('id')}`
+    url: `/tasks?id=${$(this).data('id')}&boolean=${$(this).data('boolean')}`
   }).then(function(response){
     console.log('back from /tasks PUT:', response);
     getTasks();
@@ -57,9 +45,6 @@ function completeTask() {
     alert('error completing task');
   })
 }
-
-// function incompleteButton() {
-// if this button has class=incompleteButton then run the rest of incomplete
 
 function deleteTask() {
   console.log('in deleteTask:', $(this).data('id'));
@@ -105,7 +90,7 @@ function getTasks() {
         beforeTag = '<s>';
         afterTag = '</s>';
       }
-      el.append(`<li>${beforeTag}${response[i].description}<button class="deleteButton btn btn-sm btn-danger" data-id="${response[i].id}">Delete</button><button class="completeButton btn btn-sm btn-warning" data-id="${response[i].id}">Complete</button>${afterTag}</li>`);
+      el.append(`<li>${beforeTag}${response[i].description}<button class="deleteButton btn btn-sm btn-danger" data-id="${response[i].id}">Delete</button><button class="completeButton btn btn-sm btn-warning" data-id="${response[i].id}" data-boolean="${response[i].completed}">Complete</button>${afterTag}</li>`);
     }
   }).catch(function(err){
     console.log(err);
