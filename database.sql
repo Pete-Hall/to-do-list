@@ -17,3 +17,4 @@ SELECT * FROM tasks ORDER BY id ASC;
 UPDATE tasks SET completed=false WHERE id=$1;
 
 -- adding new column for when the task was completed
+ALTER TABLE tasks ADD timeCompleted varchar(50);

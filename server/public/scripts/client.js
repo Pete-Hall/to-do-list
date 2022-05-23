@@ -45,7 +45,6 @@ function completeTask() {
   }).then(function(response){
     console.log('back from /tasks PUT:', response);
     getTasks();
-    
   }).catch(function(err){
     console.log(err);
     alert('error completing task');
@@ -98,7 +97,7 @@ function getTasks() {
         afterTag = '</s>';
         todoSymbol = '☑︎';
       }
-      el.append(`<li><button class="completeButton btn btn-sm btn-warning" data-id="${response[i].id}" data-boolean="${response[i].completed}">${todoSymbol}</button>${beforeTag}${response[i].description}<button class="deleteButton btn btn-sm btn-danger" data-id="${response[i].id}">Delete</button>${afterTag}</li>`);
+      el.append(`<li><button class="completeButton btn btn-sm btn-warning" data-id="${response[i].id}" data-boolean="${response[i].completed}">${todoSymbol}</button>${beforeTag}${response[i].description}${afterTag} ${response[i].timecompleted}<button class="deleteButton btn btn-sm btn-danger" data-id="${response[i].id}">Delete</button></li>`);
     }
   }).catch(function(err){
     console.log(err);
