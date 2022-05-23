@@ -1,5 +1,5 @@
 body {
-  background-color: #FAFAFA;
+  background-color: #d4d4d4;
 }
 
 .deleteButton {
@@ -9,6 +9,8 @@ body {
 
 ul {
   margin-top: 10px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 li {
@@ -17,4 +19,11 @@ li {
 
 .swal-overlay {
   background-color: rgba(235, 103, 255, 0.409);
+}
+
+.completeButton {
+  margin-right: 10px;
+  font-size: larger;
+  padding: 0 5px;
+  font-weight: bold;
 }

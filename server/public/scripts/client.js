@@ -14,6 +14,11 @@ function addTask() {
   let newTask = {
     description: $('#tasksIn').val()
   }
+  // input validation
+  if(newTask.description === '') {
+    alert('Cannot add an empty task');
+    return false;
+  }
   console.log('sending:', newTask);
   // make AJAX POST call to send data to server
   $.ajax({
@@ -36,7 +41,7 @@ function completeTask() {
   console.log('in completeTask:', $(this).data('id'));
   $.ajax({
     method: 'PUT',
-    url: `/tasks?id=${$(this).data('id')}&boolean=${$(this).data('boolean')}`
+    url: `/tasks?id=${$(this).data('id')}&boolean=${$(this).data('boolean')}` // sending boolean for toggle feature
   }).then(function(response){
     console.log('back from /tasks PUT:', response);
     getTasks();
@@ -86,11 +91,13 @@ function getTasks() {
       // update front end if task is completed
       let beforeTag = '';
       let afterTag = '';
+      let todoSymbol = '☐' ;
       if(response[i].completed === true) {
         beforeTag = '<s>';
         afterTag = '</s>';
+        todoSymbol = '☑︎';
       }
-      el.append(`<li>${beforeTag}${response[i].description}<button class="deleteButton btn btn-sm btn-danger" data-id="${response[i].id}">Delete</button><button class="completeButton btn btn-sm btn-warning" data-id="${response[i].id}" data-boolean="${response[i].completed}">Complete</button>${afterTag}</li>`);
+      el.append(`<li><button class="completeButton btn btn-sm btn-warning" data-id="${response[i].id}" data-boolean="${response[i].completed}">${todoSymbol}</button>${beforeTag}${response[i].description}<button class="deleteButton btn btn-sm btn-danger" data-id="${response[i].id}">Delete</button>${afterTag}</li>`);
     }
   }).catch(function(err){
     console.log(err);

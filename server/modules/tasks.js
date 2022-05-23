@@ -43,6 +43,7 @@ router.put('/', (req, res)=>{
   let queryStringTrue = `UPDATE tasks SET completed=true WHERE id=$1;`;
   let queryStringFalse = `UPDATE tasks SET completed=false WHERE id=$1;`;
   let values = [req.query.id];
+  // checks if the task is completed or not, and switches the boolean to the opposite
   if(req.query.boolean === 'false') {
       pool.query(queryStringTrue, values).then((results)=>{
       res.sendStatus(200);
