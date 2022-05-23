@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
+const moment = require('moment');
 
 router.delete('/', (req, res)=>{
   console.log('in /tasks DELETE:', req.query);
@@ -46,18 +47,19 @@ router.put('/', (req, res)=>{
   // checks if the task is completed or not, and switches the boolean to the opposite
   if(req.query.boolean === 'false') {
       pool.query(queryStringTrue, values).then((results)=>{
-      res.sendStatus(200);
+        res.send(moment());
+        // res.sendStatus(200);
     }).catch((err)=>{
-      console.log(err);
-      res.sendStatus(500);
+        console.log(err);
+        res.sendStatus(500);
     })
   } 
   else /*if(req.query.boolean === true)*/ {
       pool.query(queryStringFalse, values).then((results)=>{
-      res.sendStatus(200);
+        res.sendStatus(200);
     }).catch((err)=>{
-      console.log(err);
-      res.sendStatus(500);
+        console.log(err);
+        res.sendStatus(500);
     })
   }
 })

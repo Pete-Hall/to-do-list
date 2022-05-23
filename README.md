@@ -16,18 +16,14 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [x] READ - add the ability to display tasks from the database onto the DOM
 - [x] DELETE - add the ability to delete a task from the database and have the DOM update
 - [x] UPDATE - add the ability to update a task from incomplete to complete (false to true)
-- [ ] add CSS styling for aesthetics (check this out after Bootstrap)
+- [x] add CSS styling for aesthetics (check this out after Bootstrap)
+- [x] add data validation so no empty task gets added
 
 - [ ] add comments for clarity
 - [ ] update readme to describe what's happening
 
-- [ ] add data validation so no empty task gets added
-
-- [x] add toggle ability to the update button
-
-
 ## Stretch Goals Tasks
-- [ ] figure out a way to toggle whether or not a task is completed (vs completing it and that decision being final)
+- [x] figure out a way to toggle whether or not a task is completed (vs completing it and that decision being final)
 
 - [x] feature-styling-bootstrap
   - [x] buttons
@@ -35,3 +31,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
   - [x] responsive
 - [x] feature-confirm-delete
  - [x] are you sure? yes/no. when deleting a task using sweet alerts
+- [ ] feature-time-completed
+  - [x] install moment.js (npm install moment)
+  - [x] require moment.js (const moment = require('moment');)
+  - We're adding the time completed to the database as well as the front-end
+

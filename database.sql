@@ -15,3 +15,5 @@ SELECT * FROM tasks ORDER BY id ASC;
 
 -- used for toggling the boolean completed to false
 UPDATE tasks SET completed=false WHERE id=$1;
+
+-- adding new column for when the task was completed

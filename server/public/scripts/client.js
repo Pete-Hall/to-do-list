@@ -45,6 +45,7 @@ function completeTask() {
   }).then(function(response){
     console.log('back from /tasks PUT:', response);
     getTasks();
+    
   }).catch(function(err){
     console.log(err);
     alert('error completing task');
