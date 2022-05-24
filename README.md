@@ -1,10 +1,10 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+[Project Instructions](./INSTRUCTIONS.md)
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This is your classic to-do list. Enter in the task you want to complete. As you go along in your day, you can delete a task once it is no longer necessary. Once you complete a task, you can click on the empty box button and it will complete the task. This 'complete' button is reversable so if you accidently complete a task, you can reverse that decision. However, once a task is deleted it can never be reversed. 
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
 
@@ -18,9 +18,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [x] UPDATE - add the ability to update a task from incomplete to complete (false to true)
 - [x] add CSS styling for aesthetics (check this out after Bootstrap)
 - [x] add data validation so no empty task gets added
-
-- [ ] add comments for clarity
-- [ ] update readme to describe what's happening
+- [x] add comments for clarity
 
 ## Stretch Goals Tasks
 - [x] figure out a way to toggle whether or not a task is completed (vs completing it and that decision being final)

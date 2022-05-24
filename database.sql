@@ -16,8 +16,9 @@ SELECT * FROM tasks ORDER BY id ASC;
 -- used for toggling the boolean completed to false
 UPDATE tasks SET completed=false WHERE id=$1;
 
--- adding new column for when the task was completed
+-- adding new column for when the task was completed and set the default value
 ALTER TABLE tasks ADD timeCompleted varchar(50);
+ALTER TABLE tasks ALTER timecompleted SET DEFAULT '';
 
 -- add current time to database when task is completed
 UPDATE tasks SET timeCompleted='05/23/2022 at 6:45pm' WHERE id=37;
