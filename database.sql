@@ -2,7 +2,7 @@ CREATE TABLE tasks(
 	"id" SERIAL PRIMARY KEY,
 	"description" varchar(256),
 	"completed" boolean DEFAULT false
-	-- might also add "timecompleted" varchar(50) DEFAULT '' (I think, not sure the syntax because I added this column in after the table was created)
+	-- might also add "timecompleted" varchar(50) DEFAULT '' (I think this is the correct syntax, not sure because I added this column after the table was created)
 );
 
 -- CRUD tests

@@ -28,7 +28,7 @@ router.get('/', (req, res)=>{
 
 router.post('/', (req, res)=>{
   console.log('in /tasks POST:', req.body);
-  // send INSERT query wtih sanitized inputs
+  // send INSERT query with sanitized inputs
   let queryString = `INSERT INTO tasks (description) VALUES ($1);`; 
   let values = [req.body.description];
   pool.query(queryString, values).then((results)=>{
