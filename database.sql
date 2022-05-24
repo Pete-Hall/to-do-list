@@ -18,3 +18,9 @@ UPDATE tasks SET completed=false WHERE id=$1;
 
 -- adding new column for when the task was completed
 ALTER TABLE tasks ADD timeCompleted varchar(50);
+
+-- add current time to database when task is completed
+UPDATE tasks SET timeCompleted='05/23/2022 at 6:45pm' WHERE id=37;
+
+-- update completed boolean and time completed in one query
+UPDATE tasks SET completed=false, timecompleted='05/23/2022 at 6:57pm' WHERE id=36;

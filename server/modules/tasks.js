@@ -41,14 +41,15 @@ router.post('/', (req, res)=>{
 
 router.put('/', (req, res)=>{
   console.log('in /tasks PUT:', req.query);
-  let queryStringTrue = `UPDATE tasks SET completed=true WHERE id=$1;`;
-  let queryStringFalse = `UPDATE tasks SET completed=false WHERE id=$1;`;
+  let currentTime = moment();
+  let queryStringTrue = `UPDATE tasks SET completed=true, timecompleted='${currentTime}' WHERE id=$1;`;
+  let queryStringFalse = `UPDATE tasks SET completed=false, timecompleted='' WHERE id=$1;`;
   let values = [req.query.id];
   // checks if the task is completed or not, and switches the boolean to the opposite
   if(req.query.boolean === 'false') {
       pool.query(queryStringTrue, values).then((results)=>{
-        res.send(moment());
-        // res.sendStatus(200);
+        //res.send(moment());
+        res.sendStatus(200);
     }).catch((err)=>{
         console.log(err);
         res.sendStatus(500);
