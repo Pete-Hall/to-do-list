@@ -41,7 +41,7 @@ router.post('/', (req, res)=>{
 
 router.put('/', (req, res)=>{
   console.log('in /tasks PUT:', req.query);
-  let currentTime = moment();
+  let currentTime = moment().format('llll'); // Thu, Sep 4, 1986 8:30 PM (from https://momentjs.com/docs/#/displaying/)
   let queryStringTrue = `UPDATE tasks SET completed=true, timecompleted='${currentTime}' WHERE id=$1;`;
   let queryStringFalse = `UPDATE tasks SET completed=false, timecompleted='' WHERE id=$1;`;
   let values = [req.query.id];
