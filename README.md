@@ -31,7 +31,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
   - [x] responsive
 - [x] feature-confirm-delete
  - [x] are you sure? yes/no. when deleting a task using sweet alerts
-- [ ] feature-time-completed
+- [x] feature-time-completed
   - [x] install moment.js (npm install moment)
   - [x] require moment.js (const moment = require('moment');)
   - We're adding the time completed to the database as well as the front-end
