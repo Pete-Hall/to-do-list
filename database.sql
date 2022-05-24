@@ -2,6 +2,7 @@ CREATE TABLE tasks(
 	"id" SERIAL PRIMARY KEY,
 	"description" varchar(256),
 	"completed" boolean DEFAULT false
+	-- might also add "timecompleted" varchar(50) DEFAULT '' (I think, not sure the syntax because I added this column in after the table was created)
 );
 
 -- CRUD tests
@@ -21,7 +22,7 @@ ALTER TABLE tasks ADD timeCompleted varchar(50);
 ALTER TABLE tasks ALTER timecompleted SET DEFAULT '';
 
 -- add current time to database when task is completed
-UPDATE tasks SET timeCompleted='05/23/2022 at 6:45pm' WHERE id=37;
+UPDATE tasks SET timecompleted='05/23/2022 at 6:45pm' WHERE id=37;
 
 -- update completed boolean and time completed in one query
 UPDATE tasks SET completed=false, timecompleted='05/23/2022 at 6:57pm' WHERE id=36;
