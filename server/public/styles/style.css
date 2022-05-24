@@ -35,3 +35,8 @@ li {
 .list-group-item {
   background-color: #d4d4d4;
 }
+
+.completedColor {
+  background-color: darkslategray;
+  color: white;
+}

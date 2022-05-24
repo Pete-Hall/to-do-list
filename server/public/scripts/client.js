@@ -92,12 +92,14 @@ function getTasks() {
       let beforeTag = '';
       let afterTag = '';
       let todoSymbol = '☐' ;
+      let completedColor = '';
       if(response[i].completed === true) {
         beforeTag = '<s>';
         afterTag = '</s>';
         todoSymbol = '☑︎';
+        completedColor = 'completedColor';
       }
-      el.append(`<li class="list-group-item"><button class="completeButton btn btn-sm btn-warning" data-id="${response[i].id}" data-boolean="${response[i].completed}">${todoSymbol}</button>${beforeTag}${response[i].description}${afterTag} <button class="deleteButton btn btn-sm btn-danger" data-id="${response[i].id}">Delete</button>${response[i].timecompleted}</li>`);
+      el.append(`<li class="list-group-item ${completedColor}"><button class="completeButton btn btn-sm btn-warning" data-id="${response[i].id}" data-boolean="${response[i].completed}">${todoSymbol}</button>${beforeTag}${response[i].description}${afterTag} <button class="deleteButton btn btn-sm btn-danger" data-id="${response[i].id}">Delete</button>${response[i].timecompleted}</li>`);
     }
   }).catch(function(err){
     console.log(err);
