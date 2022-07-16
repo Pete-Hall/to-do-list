@@ -1,36 +1,39 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md)
+# To Do List
 
 ## Description
 
-This is your classic to-do list. Enter in the task you want to complete. As you go along in your day, you can delete a task once it is no longer necessary. Once you complete a task, you can click on the empty box button and it will complete the task. This 'complete' button is reversable so if you accidently complete a task, you can reverse that decision. However, once a task is deleted it can never be reversed. 
+This is your classic to-do list. Enter in the task you want to complete. As you go along, you can delete a task once it is no longer necessary. Once you complete a task, you can click on the empty box button and it will complete the task. This 'complete' button is reversable so if you accidently complete a task, you can reverse that decision. However, once a task is deleted it can never be reversed. 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Interface
 
+![wireframes](wireframes/list.png)
+##
+![wireframes](wireframes/alert.png)
 
-## Required Features Tasks
-- [x] create folder/file structure
-- [x] npm init --y, npm install express, npm install pg
-- [x] CREATE - add the ability to add a task to the database
-- [x] READ - add the ability to display tasks from the database onto the DOM
-- [x] DELETE - add the ability to delete a task from the database and have the DOM update
-- [x] UPDATE - add the ability to update a task from incomplete to complete (false to true)
-- [x] add CSS styling for aesthetics (check this out after Bootstrap)
-- [x] add data validation so no empty task gets added
-- [x] add comments for clarity
+## Installation
 
-## Stretch Goals Tasks
-- [x] figure out a way to toggle whether or not a task is completed (vs completing it and that decision being final)
+([Node.js](https://nodejs.org/en/) is used in this project)
 
-- [x] feature-styling-bootstrap
-  - [x] buttons
-  - [x] inputs
-  - [x] responsive
-- [x] feature-confirm-delete
- - [x] are you sure? yes/no. when deleting a task using sweet alerts
-- [x] feature-time-completed
-  - [x] install moment.js (npm install moment)
-  - [x] require moment.js (const moment = require('moment');)
-  - We're adding the time completed to the database as well as the front-end
+To locally run the project...
 
+1. Create a database named `weekend-to-do-app`,
+2. The queries in the `database.sql` file are set up to create all the necessary tables and populate those tables with some sample feedack. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. Using Postico is recommended to run those queries as that was used to create the queries 
+3. Open up your code editor of choice and run `npm install` in your terminal to install the necessary dependencies
+4. Run `npm run start` in your terminal to start up the server
+5. In your browser go to `localhost:5001` to view the application
+
+## Built with...
+
+- JavaScript
+- jQuery
+- HTML
+- CSS
+- Express
+- Node.js
+- PostgreSQL
+- Sweet Alerts
+- Bootstrap
+
+## Acknowledgement
+
+Thanks to [Prime Digital Academy](www.primeacademy.io)!
